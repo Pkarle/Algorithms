@@ -24,6 +24,38 @@ b=a+2
 mylist_sum=mylist+mylist2
 """
 
+def average_above_zero(tab):
+    """
+    brief: computes teh average of ...
+    Args:
+        tab: a list of numeric value
+    Return: 
+        The computed average
+    Raises:
+        ValueError if no positive value is found
+    """
+    if not(isinstance(tab, list)):
+        raise ValueError('Expected a list as input')
+    average = -99
+    valSum = 0.0
+    nPositiveValues = 0
+    NMAX = len(tab)
+    for idx in range(NMAX):
+        if tab[idx] > 0:
+            valSum = valSum + float(tab[idx])
+            nPositiveValues = nPositiveValues + 1
+
+    if nPositiveValues <= 0:
+        raise(ValueError('No positive value found'))
+    average = valSum / nPositiveValues
+    return average
+
+tab = [1, 2, 3, 4, -5]
+
+moy = average_above_zero(tab)
+print('Positive values average = ' + str(moy))
+print('Positive values average = '.format(v=moy))
+
 
 def average_above_zero(input_list):
     ##
