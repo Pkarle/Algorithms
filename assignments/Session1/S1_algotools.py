@@ -58,12 +58,16 @@ print('Positive values average = '.format(v=moy))
 
 
 def max_value(input_list):
-    ##
-    # basic function able to return the max value of a list
-    # @param input_list : the input list to be scanned
-    # @throws an exception (ValueError) on an empty list
+    """
+    brief: return the maxValue and the index of this a value of a given list
+    Args:
+        @param input_list : the input list to be scanned
+    Raises:
+        throws an exception (ValueError) when the list is empty
+    Return: The maxValue of a List and the index
+    """
 
-    if input_list == 0:
+    if not input_list:
         raise ValueError('Empty list given')
 
     maxVal = 0
@@ -71,9 +75,10 @@ def max_value(input_list):
     for idx in range(len(input_list)):
         if maxVal < input_list[idx]:
             maxVal = input_list[idx]
+            maxIndex = input_list.index(input_list[idx])
     
     return maxVal, maxIndex
 
-maxList = [1, 8, 18, 287, 23]
+maxList = [1, 203]
 
 print(max_value(maxList))
