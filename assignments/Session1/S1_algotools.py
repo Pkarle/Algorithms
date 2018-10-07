@@ -107,3 +107,24 @@ def reverse_table(tableList):
 
 reverseList = [20, 50, 60, 80]
 print(reverse_table(reverseList))
+
+
+def remove_whitespace(tableString):
+    """
+    brief: Remove whitespace in a given string
+    Args:
+        @param tableString : the string that has to be scanned
+    Raises:
+        throws an exception (ValueError) when the value is not type of string
+    Return: Return the string without space
+    """
+
+    if isinstance(tableString, int):
+        raise ValueError('The given value is not of type string')
+
+    tableString = tableString.replace(" ", "")
+
+    return tableString
+
+sentence = 'My name is '
+print(remove_whitespace(sentence))
