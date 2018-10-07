@@ -79,6 +79,31 @@ def max_value(input_list):
     
     return maxVal, maxIndex
 
-maxList = [1, 203]
+maxList = [1, 203, 40, 50]
 
 print(max_value(maxList))
+
+def reverse_table(tableList):
+    """
+    brief: Reverse value in a given list
+    Args:
+        @param tableList : the table list to be scanned
+    Raises:
+        throws an exception (ValueError) when the list is empty
+    Return: Return the reversed array
+    """
+
+    if not tableList:
+        raise ValueError('Empty list given')
+
+    for idx in range(len(tableList)):
+        currentValue = tableList[idx]
+        currentIndex = tableList.index(currentValue)
+        
+        tableList.pop(currentIndex)
+        tableList.insert(0, currentValue)
+    
+    return tableList
+
+reverseList = [20, 50, 60, 80]
+print(reverse_table(reverseList))
