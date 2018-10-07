@@ -1,3 +1,4 @@
+import random
 ##
 #
 # @author Alexandre Benoit, LISTIC Lab, IUT Annecy le vieux, FRANCE
@@ -128,3 +129,18 @@ def remove_whitespace(tableString):
 
 sentence = 'My name is '
 print(remove_whitespace(sentence))
+
+def shuffle(list):
+    shuffledList = []
+    while len(shuffledList) != len(list):
+        randomIndex = random.randint(0, len(list) - 1)
+        currentValue = list[randomIndex]
+        if currentValue in list:
+            continue
+        else:
+            shuffledList.insert(0, currentValue)
+    print(shuffledList)
+
+# shuffleList = [10, 20, 8, 5, 50]
+# shuffle(shuffleList)
+# The function is not working yet
