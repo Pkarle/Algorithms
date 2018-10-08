@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import random
 ##
 #
@@ -82,7 +83,8 @@ def max_value(input_list):
 
 maxList = [1, 203, 40, 50]
 
-print(max_value(maxList))
+print('The entire list of number : ' + str(maxList))
+print('The max value of this list equal to : ' + str(max_value(maxList)))
 
 def reverse_table(tableList):
     """
@@ -107,7 +109,8 @@ def reverse_table(tableList):
     return tableList
 
 reverseList = [20, 50, 60, 80]
-print(reverse_table(reverseList))
+print('The initial list : ' + str(reverseList))
+print('The reversed list : ' + str(reverse_table(reverseList)))
 
 
 def remove_whitespace(tableString):
@@ -128,19 +131,18 @@ def remove_whitespace(tableString):
     return tableString
 
 sentence = 'My name is '
-print(remove_whitespace(sentence))
+print('The initial string: ' + str(sentence))
+print('The string whith no whitespace : ' + remove_whitespace(sentence))
 
 def shuffle(list):
     shuffledList = []
     while len(shuffledList) != len(list):
         randomIndex = random.randint(0, len(list) - 1)
         currentValue = list[randomIndex]
-        if currentValue in list:
-            continue
-        else:
+        if currentValue not in shuffledList:
             shuffledList.insert(0, currentValue)
-    print(shuffledList)
+    return shuffledList
 
-# shuffleList = [10, 20, 8, 5, 50]
-# shuffle(shuffleList)
+shuffleList = [10, 20, 8, 5, 50]
+print('The shuffled list : ' + str(shuffle(shuffleList)))
 # The function is not working yet
