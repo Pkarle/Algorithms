@@ -1,30 +1,7 @@
 # -*- coding: utf-8 -*-
 import random
-##
-#
 # @author Alexandre Benoit, LISTIC Lab, IUT Annecy le vieux, FRANCE
 # @brief a set of generic functions for data management
-
-"""
-# a variable
-a=1 # default type : int
-
-# an empty list
-mylist = []
-
-#a filled list
-mylist2=[1,2,3]
-
-#append to a list
-mylist.append(10)
-
-# a buggy list
-mybuggylist=[1,'a', "Hi"]
-
-#operators
-b=a+2
-mylist_sum=mylist+mylist2
-"""
 
 def average_above_zero(tab):
     """
@@ -53,11 +30,9 @@ def average_above_zero(tab):
     return average
 
 tab = [1, 2, 3, 4, -5]
-
 moy = average_above_zero(tab)
 print('Positive values average = ' + str(moy))
 print('Positive values average = '.format(v=moy))
-
 
 def max_value(input_list):
     """
