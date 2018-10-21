@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import random
+import unittest
 # @author Alexandre Benoit, LISTIC Lab, IUT Annecy le vieux, FRANCE
 # @brief a set of generic functions for data management
 
@@ -33,6 +34,9 @@ tab = [1, 2, 3, 4, -5]
 moy = average_above_zero(tab)
 print('Positive values average = ' + str(moy))
 print('Positive values average = '.format(v=moy))
+
+def test_average_above_zero():
+    self.assertEqual(average_above_zero[tab], 2,5)
 
 def max_value(input_list):
     """
