@@ -4,6 +4,8 @@ import unittest
 # @author Alexandre Benoit, LISTIC Lab, IUT Annecy le vieux, FRANCE
 # @brief a set of generic functions for data management
 
+testCase = unittest.TestCase('__init__');
+
 def average_above_zero(tab):
     """
     brief: computes teh average of ...
@@ -36,7 +38,9 @@ print('Positive values average = ' + str(moy))
 print('Positive values average = '.format(v=moy))
 
 def test_average_above_zero():
-    self.assertEqual(average_above_zero[tab], 2,5)
+    testCase.assertEqual(average_above_zero(tab), 2.5)
+
+test_average_above_zero()
 
 def max_value(input_list):
     """
