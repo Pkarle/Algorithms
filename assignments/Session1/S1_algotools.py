@@ -44,16 +44,16 @@ def max_value(input_list):
     Return: The maxValue of a List and the index
     """
 
-    if not input_list:
-        raise ValueError('Empty list given')
-
+    if not(isinstance(input_list, list)):
+        raise ValueError('The parameter given is not type of list')
     maxVal = 0
     maxIndex = 0
     for idx in range(len(input_list)):
         if maxVal < input_list[idx]:
             maxVal = input_list[idx]
             maxIndex = input_list.index(input_list[idx])
-    
+    if maxVal == 0:
+        raise ValueError('None of the value in this list are higher than 0')
     return maxVal, maxIndex
 
 maxList = [1, 203, 40, 50]
