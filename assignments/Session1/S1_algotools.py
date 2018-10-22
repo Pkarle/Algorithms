@@ -36,8 +36,6 @@ moy = average_above_zero(tab)
 print('Positive values average = ' + str(moy))
 print('Positive values average = '.format(v=moy))
 
-test_average_above_zero()
-
 def max_value(input_list):
     """
     brief: return the maxValue and the index of this a value of a given list
