@@ -3,8 +3,6 @@ import random
 # @author Alexandre Benoit, LISTIC Lab, IUT Annecy le vieux, FRANCE
 # @brief a set of generic functions for data management
 
-testCase = unittest.TestCase('__init__');
-
 def average_above_zero(tab):
     """
     brief: computes teh average of ...
