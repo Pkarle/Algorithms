@@ -71,8 +71,8 @@ def reverse_table(tableList):
     Return: Return the reversed array
     """
 
-    if not tableList:
-        raise ValueError('Empty list given')
+    if not(isinstance(tableList, list)):
+        raise ValueError('The parameter given is not type of list')
 
     for idx in range(len(tableList)):
         currentValue = tableList[idx]
@@ -83,7 +83,7 @@ def reverse_table(tableList):
     
     return tableList
 
-reverseList = [20, 50, 60, 80]
+reverseList = [-6, 20, 12, 8, -5]
 print('The initial list : ' + str(reverseList))
 print('The reversed list : ' + str(reverse_table(reverseList)))
 
