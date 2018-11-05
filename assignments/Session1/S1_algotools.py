@@ -121,3 +121,53 @@ def shuffle(list):
 shuffleList = [10, 20, 8, 5, 50]
 print('The shuffled list : ' + str(shuffle(shuffleList)))
 # The function is not working yet
+
+def roi_bbox(inputMat):
+    """
+    Todo : Add comments (what, inputs, outputs)
+    """
+    roi = None
+
+    if isinstance(inputMat, np.ndarray):
+        raise ValueError('Expected a list as input')
+    if not (inputMat.dtype == np.bool):
+        raise ValueError('Expected input of type numpy.bool')
+
+    """
+    Find out : xmin, xmax, ymin, ymax
+    """
+
+    lmin = inputMat.shape[0]
+    lmax = 0
+    cmin = inputMat.shape[1]
+    cmax = 0
+
+    for l in range(inputMat.shape[0]):
+        for c in range(inputMat.shape[1]):
+            # Check line axis
+            if inputMap[l,c] == True:
+                if  l < lmin:
+                    lmin = l
+                if  l < lmax:
+                    lmax = l
+                if  c < cmin:
+                    cmin = c
+                if  c < cmax:
+                    cmax = c
+        roi[[lmin, cmin],
+            [lmin, cmax],
+            [lmax, cmin],
+            [lmax, cmax]]
+    return np.array(roi)
+
+# Import some library
+import numpy as np
+inputMat = np.zeros((5,6), dtype=np.bool)
+# Fill some point within it
+inputMat[2,3] = True
+inputMat[2,4] = True
+inputMat[3,3] = True
+inputMat[2,4] = True
+inputMat[2:4,3:5] = np.ones((2,2), dtype=np.bool)
+
+print("Roi" + str(roi_bbox(inputMat))
