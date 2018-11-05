@@ -170,4 +170,26 @@ inputMat[3,3] = True
 inputMat[2,4] = True
 inputMat[2:4,3:5] = np.ones((2,2), dtype=np.bool)
 
-print("Roi" + str(roi_bbox(inputMat))
+# print("Roi" + str(roi_bbox(inputMat))
+
+def random_fill_sparse(numpyArray, k):
+    """
+    brief: Fill an array of shape using a random key K
+    Args:
+        @param numpyArray: Array created by using numpy library
+        @param k: random key that will fill within the array
+    Return: Return the array filled with the random key
+    """
+
+    if not isinstance(numpyArray, np.ndarray):
+        raise ValueError('Expected a list as input using numpy')
+    
+
+    for i in range(k):
+        randomNumber = np.random.random(1)
+        print(randomNumber)
+
+
+numpyArray = np.chararray((2,2))
+
+random_fill_sparse(numpyArray, 5)
