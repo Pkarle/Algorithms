@@ -17,3 +17,9 @@ chanel.queue_declare(queue='presentation')
 chanel.basic_publish(exchange='', routing_key='presentation', body="Damien", properties=pika.BasicProperties(
     delivery_mode = 2 # make message persistent
 ))
+
+def publishing_routine(number, exchange, routing_key, body):
+    for i in range(number):
+        chanel.basic_publish(exchange=exchange, routing_key=routing_key, body=body, properties=pika.BasicProperties(
+            delivery_mode = 2 # make message persistent
+        ))
